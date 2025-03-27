@@ -6,13 +6,14 @@ from .lang.ru import (
     MSG_BROKEN_BOT,
     TEMPLATE_MSG_HELP,
 )
-from .handlers import files, unknown
+from .handlers import files, admin, unknown
 from .logs import custom_log
 from .filters import IsTestingMode
 from .logger import log
 
 dp = Dispatcher()
 dp.include_router(files.router)
+dp.include_router(admin.router)
 dp.include_router(unknown.router)
 
 

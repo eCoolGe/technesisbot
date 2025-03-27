@@ -1,10 +1,9 @@
 from typing import Type
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import NoResultFound
 from ..models.db import Base, Record
-from ..config import settings
 from ..logger import log
 from ..lang.ru import LOG_MSG_DEFAULT_ERROR
 
@@ -87,3 +86,20 @@ class DatabaseManager:
         self.session.delete(record)
         self.session.commit()
         return True
+
+    def reset_database(self) -> bool:
+        """
+        Полностью пересоздает базу данных.
+        """
+        try:
+            self.session.close()
+            self.engine.dispose()
+            Base.metadata.drop_all(self.engine)
+            Base.metadata.create_all(self.engine)
+            self.session = self.__sessionmaker()
+            return True
+        except Exception as error:
+            log.error(LOG_MSG_DEFAULT_ERROR, error)
+            return False
+
+
