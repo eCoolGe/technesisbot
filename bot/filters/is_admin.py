@@ -10,7 +10,7 @@ class IsAdmin(Filter):
         """Фильтр для проверки у пользователя прав Администратора
 
         Args:
-            logging (bool, optional): Отображать ли логи о том, что Администратор выполнил действие. Изначально равно True
+            logging (bool, optional): Отображать ли логи о том, что Администратор выполнил действие. Изначально равно False
         """
         self.admin_list = settings.TRUSTED_ID
         self.logging = logging
