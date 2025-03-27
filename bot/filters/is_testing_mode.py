@@ -9,7 +9,7 @@ class IsTestingMode(IsAdmin):
         """
         Фильтр, который запрещает использовать бота в режиме тестирования всем, кроме Администраторов
         """
-        super().__init__(logging=True)
+        super().__init__()
         self.testing_mode = settings.TESTING_MODE
 
     async def __call__(self, message: Message) -> bool:
@@ -21,5 +21,5 @@ class IsTestingMode(IsAdmin):
             if self.testing_mode
             else "[%s|%s] выполнил действие: %s"
         )
-        super().log_info(message=message, log_message=log_message)
+        self.log_info(message=message, log_message=log_message)
         return self.testing_mode
