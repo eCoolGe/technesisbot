@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "technesisbot"
+version = "1.0.0"
+description = "Telegram Bot"
+authors = ["eCoolGe <eCoolGe@mail.ru>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "bot" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+sqlalchemy = ">=2.0.40,<2.1.0"
+pydantic = ">=2.10.6,<2.11.0"
+pydantic-settings = ">=2.8.1,<2.9.0"
+aiogram = ">=3.19.0,<3.20.0"
+pandas = ">=2.2.3,<2.3.0"
+
+[tool.poetry.scripts]
+start = "bot.main:start"
+
+[tool.poetry.urls]
+repository = "https://github.com/eCoolGe/technesisbot"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
