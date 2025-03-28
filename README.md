@@ -1,5 +1,3 @@
-# technesisbot
-
 # TechnesisBot
 
 _Данный бот был написан для парсинга цен с сайтов по ULR и X-Path_
