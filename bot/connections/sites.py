@@ -3,7 +3,9 @@ import re
 import httpx
 from lxml import html
 from decimal import Decimal
+
 from ..logger import log
+
 
 async def parse_and_calculate_average(df):
     """

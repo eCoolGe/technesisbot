@@ -1,5 +1,6 @@
 from ..config import settings, bot
 
+
 async def custom_log(log_message: str) -> None:
     """Отправляет сообщение в лог-канал
 

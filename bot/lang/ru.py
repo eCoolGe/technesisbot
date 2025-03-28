@@ -18,5 +18,3 @@ TEMPLATE_ERROR = "<b>Ошибка!</b> {}\n\n{}"
 
 
 LOG_MSG_DEFAULT_ERROR = "Ошибка: %s"
-LOG_MSG_INSERT_USER_DATA = "_INSERT INTO bot.users_changes - (%s, %s, %s, %s, %s, %s, %s, %s)"
-LOG_MSG_INSERT_QUESTION = "_INSERT INTO bot.questions - (%s, %s, %s, %s, %s)"
